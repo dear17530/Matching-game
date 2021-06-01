@@ -290,7 +290,7 @@
             }
 
             // 如果翻開兩張了
-            if ($('.card-open').length === 32) {
+            if ($('.card-open').length === 2) {
                 // 如果兩張的數字一樣
                 if ($('.card-open').eq(0).attr('data-card') === $('.card-open').eq(1).attr('data-card')) {
                     // 淡出，使用 card-clear 標記已解決
@@ -304,8 +304,10 @@
                 }, 1000);
             }
 
+
+
             // 如果全部翻完
-            if ($('.card-clear').length === 2) {
+            if ($('.card-clear').length === 32) {
                 if (minute <= highscore.minute && second < highscore.second) {
                     Swal.fire({
                         title: '恭喜過關',
