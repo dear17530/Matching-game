@@ -57,13 +57,14 @@
 
         #title {
             font-family: 'Acme', sans-serif;
-            font-size: 100px;
+            font-size: 60px;
             color: #ffe6a6;
             text-align: center;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            z-index: 1;
         }
 
         #top {
@@ -72,6 +73,7 @@
             position: absolute;
             top: -20px;
             left: 50%;
+            text-align: center;
         }
 
         #bottom {
@@ -80,6 +82,12 @@
             position: absolute;
             bottom: -20px;
             left: 50%;
+            text-align: center;
+        }
+
+        #top img,
+        #bottom img {
+            width: 10vw;
         }
 
         .foots {
@@ -93,6 +101,7 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
+            text-align: center;
         }
 
         #recordholder {
@@ -111,8 +120,8 @@
         }
 
         .card {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             position: relative;
             /* 設定子元素在 3D 空間內 */
             transform-style: preserve-3d;
@@ -134,7 +143,7 @@
         .card-front {
             width: 100%;
             height: 100%;
-            background-image: url(/20210420/翻牌遊戲2/1.png);
+            background-image: url(/1.png);
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -180,24 +189,24 @@
             <input type="button" value="Start" id="btnstart">
         </div>
         <div id="top">
-            <img src="/20210420/翻牌遊戲2/1.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/2.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/3.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/4.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/13.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/14.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/15.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/16.png" class="foots">
+            <img src="/1.png" class="foots">
+            <img src="/2.png" class="foots">
+            <img src="/3.png" class="foots">
+            <img src="/4.png" class="foots">
+            <img src="/13.png" class="foots">
+            <img src="/14.png" class="foots">
+            <img src="/15.png" class="foots">
+            <img src="/16.png" class="foots">
         </div>
         <div id="bottom">
-            <img src="/20210420/翻牌遊戲2/13.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/14.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/15.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/16.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/1.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/2.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/3.png" class="foots">
-            <img src="/20210420/翻牌遊戲2/4.png" class="foots">
+            <img src="/13.png" class="foots">
+            <img src="/14.png" class="foots">
+            <img src="/15.png" class="foots">
+            <img src="/16.png" class="foots">
+            <img src="/1.png" class="foots">
+            <img src="/2.png" class="foots">
+            <img src="/3.png" class="foots">
+            <img src="/4.png" class="foots">
         </div>
     </div>
     <div id="game">
@@ -264,7 +273,7 @@
 
         for (let i = 0; i < 32; i++) {
             let number = i % 16 + 1
-            $('.card').eq(i).find('.card-front').css('background-image', `url(/20210420/翻牌遊戲2/${number}.png`)
+            $('.card').eq(i).find('.card-front').css('background-image', `url(/${number}.png`)
             $('.card').eq(i).attr('data-card', number)
             // 隨機打散
             let target = Math.floor(Math.random() * 16)
@@ -281,7 +290,7 @@
             }
 
             // 如果翻開兩張了
-            if ($('.card-open').length === 2) {
+            if ($('.card-open').length === 32) {
                 // 如果兩張的數字一樣
                 if ($('.card-open').eq(0).attr('data-card') === $('.card-open').eq(1).attr('data-card')) {
                     // 淡出，使用 card-clear 標記已解決
