@@ -143,7 +143,7 @@
     .card-front {
       width: 100%;
       height: 100%;
-      background-image: url(/1.png);
+      background-image: url(./1.png);
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -189,24 +189,24 @@
       <input type="button" value="Start" id="btnstart">
     </div>
     <div id="top">
-      <img src="/1.png" class="foots">
-      <img src="/2.png" class="foots">
-      <img src="/3.png" class="foots">
-      <img src="/4.png" class="foots">
-      <img src="/13.png" class="foots">
-      <img src="/14.png" class="foots">
-      <img src="/15.png" class="foots">
-      <img src="/16.png" class="foots">
+      <img src="./1.png" class="foots">
+      <img src="./2.png" class="foots">
+      <img src="./3.png" class="foots">
+      <img src="./4.png" class="foots">
+      <img src="./13.png" class="foots">
+      <img src="./14.png" class="foots">
+      <img src="./15.png" class="foots">
+      <img src="./16.png" class="foots">
     </div>
     <div id="bottom">
-      <img src="/13.png" class="foots">
-      <img src="/14.png" class="foots">
-      <img src="/15.png" class="foots">
-      <img src="/16.png" class="foots">
-      <img src="/1.png" class="foots">
-      <img src="/2.png" class="foots">
-      <img src="/3.png" class="foots">
-      <img src="/4.png" class="foots">
+      <img src="./13.png" class="foots">
+      <img src="./14.png" class="foots">
+      <img src="./15.png" class="foots">
+      <img src="./16.png" class="foots">
+      <img src="./1.png" class="foots">
+      <img src="./2.png" class="foots">
+      <img src="./3.png" class="foots">
+      <img src="./4.png" class="foots">
     </div>
   </div>
   <div id="game">
@@ -221,7 +221,7 @@
       <p id="time">Time:</p>
     </div>
   </div>
-  <script src="https://jquery-3.6.0.min.js"></script>
+  <script src="./jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script>
     let second = 0
@@ -273,7 +273,7 @@
 
     for (let i = 0; i < 32; i++) {
       let number = i % 16 + 1
-      $('.card').eq(i).find('.card-front').css('background-image', `url(/${number}.png`)
+      $('.card').eq(i).find('.card-front').css('background-image', `url(./${number}.png`)
       $('.card').eq(i).attr('data-card', number)
       // 隨機打散
       let target = Math.floor(Math.random() * 16)
